@@ -8,6 +8,12 @@ class Controls{
     }
     // hashtag means private method here, No one can't contorls this method outside of class
     #addkeyboardListeners(){
+        // Arrow function notation : 
+        //Arrow func is same as writing like ".onkeydown=function(event){ ~ }"
+        //But those two have significant differences.
+        //when writing like normal function, the this.stops refering Controls object
+        //but it refer to its function being included
+        //When Arrow function has used, the this. refer to Controls obj. So it can use this. variables which decleard in constructor
         document.onkeydown=(event)=>{
             switch(event.key){
                 case "ArrowLeft":
@@ -20,7 +26,7 @@ class Controls{
                     this.forward=true
                     break
                 case "ArrowDown":
-                    this.reverse=true
+                    this.reverse=true 
                     break
                 
             }
